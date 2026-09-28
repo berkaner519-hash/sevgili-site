@@ -1,0 +1,1338 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sonsuza Kadar Biz ♡</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08040d;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ---------------- ARKA PLAN ---------------- */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 20% 20%, #8d2cff33, transparent 35%),
+        radial-gradient(circle at 80% 40%, #ff2f8f22, transparent 35%),
+        radial-gradient(circle at 50% 90%, #742cff22, transparent 40%);
+
+    pointer-events:none;
+}
+
+/* ---------------- KALPLER ---------------- */
+
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:20;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+
+    color:#ff55a8;
+
+    font-size:18px;
+
+    text-shadow:
+        0 0 10px #ff3c9d,
+        0 0 25px #a52cff;
+
+    animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) scale(.7) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            scale(1.5)
+            rotate(30deg);
+
+        opacity:0;
+    }
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    width:100%;
+
+    padding:22px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:10;
+
+    background:linear-gradient(
+        rgba(8,4,13,.8),
+        transparent
+    );
+
+    backdrop-filter:blur(8px);
+}
+
+.logo{
+
+    font-family:'DM Serif Display';
+
+    font-size:25px;
+
+    background:
+        linear-gradient(90deg,#ff72bb,#a66cff);
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    margin-left:25px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff70b8;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+
+    height:100vh;
+
+    min-height:700px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(10,3,15,.25),
+            rgba(8,4,13,.9)
+        ),
+        url("foto1.jpg") center/cover;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 10%,
+            #08040dcc 90%
+        );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    padding:30px;
+
+}
+
+.small-title{
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
+
+    font-size:11px;
+
+    color:#ff83c2;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-family:'DM Serif Display';
+
+    font-size:
+        clamp(70px,11vw,150px);
+
+    line-height:.9;
+
+    font-weight:400;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff91ca,
+            #b66cff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero p{
+
+    margin:30px auto 0;
+
+    max-width:550px;
+
+    line-height:1.8;
+
+    color:#ddd;
+
+    font-size:16px;
+}
+
+.scroll{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:3;
+
+    color:#aaa;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+}
+
+/* ---------------- GENEL ---------------- */
+
+section{
+
+    padding:
+        150px 8%;
+
+    position:relative;
+
+}
+
+.section-label{
+
+    color:#ff69b4;
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-size:10px;
+
+    margin-bottom:20px;
+}
+
+.section-title{
+
+    font-family:'DM Serif Display';
+
+    font-weight:400;
+
+    font-size:
+        clamp(50px,7vw,90px);
+
+    line-height:1;
+
+}
+
+.description{
+
+    max-width:600px;
+
+    color:#aaa;
+
+    line-height:2;
+
+    margin-top:30px;
+
+}
+
+/* ---------------- FOTO BÖLÜMÜ ---------------- */
+
+.photo-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.photo-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1.2fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    width:100%;
+}
+
+.photo-frame{
+
+    position:relative;
+
+}
+
+.photo-frame img{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:cover;
+
+    border-radius:4px;
+
+    box-shadow:
+        0 30px 100px #000,
+        0 0 80px #9e32ff20;
+
+}
+
+.photo-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border:1px solid #ff62b855;
+
+    transform:
+        translate(18px,18px);
+
+    z-index:-1;
+}
+
+/* ---------------- ANILAR ---------------- */
+
+.memories{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #180820,
+            transparent
+        );
+}
+
+.memories .description{
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.gallery{
+
+    margin-top:80px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(12,1fr);
+
+    gap:20px;
+
+}
+
+.gallery-item{
+
+    overflow:hidden;
+
+    position:relative;
+
+    border-radius:4px;
+
+}
+
+.gallery-item:nth-child(1){
+    grid-column:span 7;
+}
+
+.gallery-item:nth-child(2){
+    grid-column:span 5;
+}
+
+.gallery-item:nth-child(3){
+    grid-column:span 5;
+}
+
+.gallery-item:nth-child(4){
+    grid-column:span 7;
+}
+
+.gallery-item:nth-child(5){
+    grid-column:span 4;
+}
+
+.gallery-item:nth-child(6){
+    grid-column:span 4;
+}
+
+.gallery-item:nth-child(7){
+    grid-column:span 4;
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    transition:
+        transform .8s,
+        filter .8s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.07);
+
+    filter:
+        brightness(.75)
+        saturate(1.2);
+}
+
+/* ---------------- ZAMAN ---------------- */
+
+.timeline{
+
+    max-width:900px;
+
+    margin:
+        80px auto 0;
+
+}
+
+.timeline-item{
+
+    display:grid;
+
+    grid-template-columns:
+        130px 1fr;
+
+    gap:50px;
+
+    padding:
+        45px 0;
+
+    border-bottom:
+        1px solid #ffffff12;
+}
+
+.timeline-date{
+
+    color:#ff65b3;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+}
+
+.timeline h3{
+
+    font-family:'DM Serif Display';
+
+    font-size:32px;
+
+    font-weight:400;
+
+    margin-bottom:12px;
+}
+
+.timeline p{
+
+    color:#999;
+
+    line-height:1.8;
+
+}
+
+/* ---------------- BÜYÜK FOTO ---------------- */
+
+.big-photo{
+
+    height:90vh;
+
+    min-height:600px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #08040dcc,
+            transparent,
+            #08040d88
+        ),
+        url("foto6.jpg")
+        center/cover;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:8%;
+
+}
+
+.big-photo h2{
+
+    font-family:'DM Serif Display';
+
+    font-weight:400;
+
+    font-size:
+        clamp(55px,8vw,120px);
+
+    line-height:.9;
+
+    max-width:800px;
+
+}
+
+/* ---------------- SAYAÇ ---------------- */
+
+.counter{
+
+    text-align:center;
+
+}
+
+.counter-grid{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.counter-box{
+
+    min-width:150px;
+
+    padding:35px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff08,
+            #ff3f9d08
+        );
+
+    border:
+        1px solid #ffffff12;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.counter-box span{
+
+    display:block;
+
+    font-family:'DM Serif Display';
+
+    font-size:55px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff78bb,
+            #a96aff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.counter-box small{
+
+    color:#777;
+
+    letter-spacing:3px;
+
+    font-size:9px;
+
+}
+
+/* ---------------- MEKTUP ---------------- */
+
+.letter{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #681c7444,
+            transparent 60%
+        );
+
+}
+
+.letter-inner{
+
+    max-width:800px;
+
+}
+
+.letter-icon{
+
+    font-size:60px;
+
+    margin-bottom:30px;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+.letter h2{
+
+    font-family:'DM Serif Display';
+
+    font-size:
+        clamp(55px,8vw,110px);
+
+    font-weight:400;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff91ca,
+            #a96cff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.letter p{
+
+    color:#bbb;
+
+    font-size:17px;
+
+    line-height:2;
+
+    margin-top:35px;
+
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+/* ---------------- MOBİL ---------------- */
+
+@media(max-width:800px){
+
+    nav a{
+        display:none;
+    }
+
+    section{
+        padding:
+            100px 7%;
+    }
+
+    .photo-layout{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .photo-frame img{
+        height:500px;
+    }
+
+    .gallery{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-item:nth-child(n){
+        grid-column:span 1;
+    }
+
+    .gallery-item img{
+        height:450px;
+    }
+
+    .timeline-item{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+    .big-photo{
+
+        height:75vh;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HAREKETLİ KALPLER -->
+
+<div class="hearts" id="hearts"></div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        E ♡ B
+    </div>
+
+    <div>
+
+        <a href="#hikaye">HİKAYEMİZ</a>
+
+        <a href="#anilar">ANILAR</a>
+
+        <a href="#zaman">ZAMAN</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Elama Benim tarfımdan özel hazırlanmıştır
+        </div>
+
+        <h1>
+        
+            Ela & Berkan
+        
+        </h1>
+
+        <p>
+            Seni çok seviyorum sevgilim yavrum iyiki yollarımız kesişmiş o okulda bu bizim için
+            Bence en güzel tesadüf.
+        </p>
+
+    </div>
+
+    <div class="scroll">
+        AŞAĞI KAYDIR ↓
+    </div>
+
+</header>
+
+
+<!-- HİKAYE -->
+
+<section class="photo-section" id="hikaye">
+
+    <div class="photo-layout">
+
+        <div>
+
+            <div class="section-label">
+                01 — Hikayemiz
+            </div>
+
+            <h2 class="section-title">
+                Her güzel hikayenin bir başlangıcı vardır.
+            </h2>
+
+            <p class="description">
+
+                Bizim hikayemizin nerede başladığını
+                ikimiz de çok iyi hatırlıyoruz okuldaki o tenefüs buluşmaları volaybollar ve daha fazlası.
+
+                <br><br>
+
+                Ama benim asıl sevdiğim şey,
+                hikayemizin hâlâ devam ediyor olması ve hiç bitmeyecek olması.
+
+                <br><br>
+
+                Ve bundan sonra yaşayacağımız
+                bütün güzel anları düşünmek çok güzel bir his.
+
+            </p>
+
+        </div>
+
+
+        <div class="photo-frame">
+
+            <img src="foto2.jpg">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANILAR -->
+
+<section class="memories" id="anilar">
+
+    <div class="section-label">
+        02 — Anılar
+    </div>
+
+    <h2 class="section-title">
+        Bizden kalanlar.
+    </h2>
+
+    <p class="description">
+
+        Bazı fotoğraflar sadece fotoğraf değildir.
+        İçinde koca bir anı saklar bu fotoğraflar gibi.
+
+    </p>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="foto3.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto4.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto5.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto6.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto7.jpg">
+        </div>
+
+        <div class="gallery-item">
+            <img src="foto8.jpg">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ZAMAN TÜNELİ -->
+
+<section id="zaman">
+
+    <div class="section-label">
+        03 — Zaman
+    </div>
+
+    <h2 class="section-title">
+        Bizim zaman çizelgemiz.
+    </h2>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                BAŞLANGIÇ
+            </div>
+
+            <div>
+
+                <h3>
+                    İlk karşılaşmamız.
+                </h3>
+
+                <p>
+                    Her şeyin başladığı o gece bana ilk mesajını attıgın gece.
+                    O zaman bunun hayatımızdaki
+                    en önemli gecelerden biri
+                    olacağını bilmiyorduk.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                SONRA
+            </div>
+
+            <div>
+
+                <h3>
+                    Birlikte daha fazla anı.
+                </h3>
+
+                <p>
+                    Birlikte güldüğümüz,
+                    gezdiğimiz, konuştuğumuz
+                    ve bazen hiçbir şey yapmadan
+                    sadece yan yana koridorda yere baktıgımız günler.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                BUGÜN
+            </div>
+
+            <div>
+
+                <h3>
+                    Hikayemiz devam ediyor.
+                </h3>
+
+                <p>
+                    Ve bence en güzel kısmı
+                    henüz yazılmadı devamıda yazılacak daha iyi anılarla.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BÜYÜK FOTO -->
+
+<div class="big-photo">
+
+    <h2>
+        İyi ki<br>
+        yollarımız kesişmiş.
+    </h2>
+
+</div>
+
+
+<!-- SAYAÇ -->
+
+<section class="counter">
+
+    <div class="section-label">
+        04 — Birlikte
+    </div>
+
+    <h2 class="section-title">
+        Ne kadar zaman geçti?
+    </h2>
+
+    <p class="description" style="margin-left:auto;margin-right:auto;">
+
+        Ve sayaç hâlâ çalışıyor...
+
+    </p>
+
+
+    <div class="counter-grid">
+
+        <div class="counter-box">
+
+            <span id="days">
+                1001
+            </span>
+
+            <small>GÜN</small>
+
+        </div>
+
+
+        <div class="counter-box">
+
+            <span id="hours">
+                0
+            </span>
+
+            <small>SAAT</small>
+
+        </div>
+
+
+        <div class="counter-box">
+
+            <span id="minutes">
+                0
+            </span>
+
+            <small>DAKİKA</small>
+
+        </div>
+
+
+        <div class="counter-box">
+
+            <span id="seconds">
+                0
+            </span>
+
+            <small>SANİYE</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEKTUP -->
+
+<section class="letter">
+
+    <div class="letter-inner">
+
+        <div class="letter-icon">
+            💗
+        </div>
+
+        <div class="section-label">
+            Son bir şey...
+        </div>
+
+        <h2>
+            Seni Seviyorum.
+        </h2>
+
+        <p>
+
+            Bu siteyi hazırlarken fark ettim ki,
+            bizim yaşadığımız şeyleri birkaç
+            sayfaya sığdırmak İMKANSIZ.
+
+            <br><br>
+
+            Çünkü sen benim için sadece
+            güzel bir anı değilsin.
+
+            <br><br>
+
+            Sen, gelecekte yaşayacağım
+            güzel anıların da bir parçasısın.
+
+            <br><br>
+
+            İyi ki varsın.
+            İyi ki benimlesin.
+
+            <br><br>
+
+            <strong>
+                Seni çok seviyorum BİRTANEM. ♡
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    ELA & BERKAN — SONSUZA KADAR ♡
+
+</footer>
+
+
+<script>
+
+/* ---------------- KALP SİSTEMİ ---------------- */
+
+const heartContainer =
+    document.getElementById("hearts");
+
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = [
+        "♡",
+        "♥",
+        "❤",
+        "💗",
+        "💖",
+        "💜"
+    ];
+
+    heart.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        12 + Math.random() * 25 + "px";
+
+    const duration =
+        5 + Math.random() * 7;
+
+    heart.style.animationDuration =
+        duration + "s";
+
+    heart.style.opacity =
+        .3 + Math.random() * .7;
+
+    heartContainer.appendChild(heart);
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, duration * 1000);
+
+}
+
+
+setInterval(createHeart, 500);
+
+
+/* ---------------- SAYAÇ ---------------- */
+
+/* BURAYA İLİŞKİNİZİN BAŞLANGIÇ TARİHİNİ YAZ */
+
+const startDate =
+    new Date("2024-01-01T00:00:00");
+
+
+function updateCounter(){
+
+    const now =
+        new Date();
+
+    const difference =
+        now - startDate;
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            difference /
+            (1000 * 60) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            difference /
+            1000 % 60
+        );
+
+
+    document.getElementById("days")
+        .textContent = days;
+
+
+    document.getElementById("hours")
+        .textContent = hours;
+
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+
+    document.getElementById("seconds")
+        .textContent = seconds;
+
+}
+
+
+updateCounter();
+
+setInterval(
+    updateCounter,
+    1000
+);
+
+</script>
+
+</body>
+</html>
+```
